@@ -1,30 +1,47 @@
-import React from 'react'
-import Link from 'next/link'
-import CardFaq from './CardFaq'
+'use client'
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import CardFaq from './CardFaq';
 
 const SectionFaq = () => {
-    const FaqArray = [{
-        question: '¿Cómo hago el pedido?',
-        answer: 'Selecciona el café que desees probar y completa el proceso de compra. Si lo prefieres, te preguntaremos cada cuánto quieres que te lo mandemos a casa y así nunca te quedarás sin café.'
-    },
-    {
-        question: '¿Por qué los precios son tan bajos?',
-        answer: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero,um dolor sit amet consectetur adipisicing elit. Ipsam vero, cumque magni cumque magnium dolor sit amet consectetur adipisicing elit. Ipsam vero, cumque magni iste quos nobis perspiciatis aliquam debitis commodi assumenda ad! Iure, cupiditate. Fugit aperiam tempora excepturi ipsum doloremque nisi!'
-    },
-    {
-        question: '¿Es posible enviar café a mi oficina? ',
-        answer: ''
-    }]
+    const [visibleAnswers, setVisibleAnswers] = useState([]);
+
+    const FaqArray = [
+        {
+            question: '¿Cómo hago el pedido?',
+            answer: 'Selecciona el café que desees probar y completa el proceso de compra. Si lo prefieres, te preguntaremos cada cuánto quieres que te lo mandemos a casa y así nunca te quedarás sin café.'
+        },
+        {
+            question: '¿Por qué los precios son tan bajos?',
+            answer: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam vero,um dolor sit amet consectetur adipisicing elit. Ipsam vero, cumque magni cumque magnium dolor sit amet consectetur adipisicing elit. Ipsam vero, cumque magni iste quos nobis perspiciatis aliquam debitis commodi assumenda ad! Iure, cupiditate. Fugit aperiam tempora excepturi ipsum doloremque nisi!'
+        },
+        {
+            question: '¿Es posible enviar café a mi oficina?',
+            answer: ''
+        }
+    ];
+
+    const toggleAnswer = (index) => {
+        const updatedVisibility = [...visibleAnswers];
+        updatedVisibility[index] = !updatedVisibility[index];
+        setVisibleAnswers(updatedVisibility);
+    };
+
     return (
         <div className='font-outfit bg-GreenAll w-full flex flex-col justify-center items-center gap-6 py-12 px-[386px]'>
             <h2 className='text-white font-medium text-[24px] leading-7'>Preguntas frecuentes</h2>
             <div className='flex flex-col items-center gap-4 mt-4'>
                 <div className='flex flex-col gap-4'>
-                    {FaqArray.map((data, i) => {
-                        return (
-                            <CardFaq key={i} question={data.question} answer={data.answer} />
-                        )
-                    })}
+                    {FaqArray.map((data, i) => (
+                        <CardFaq
+                            key={i}
+                            question={data.question}
+                            answer={data.answer}
+                            isVisible={visibleAnswers[i]}
+                            onToggle={() => toggleAnswer(i)}
+                        />
+                    ))}
                 </div>
             </div>
             <Link href='' className='flex gap-4 text-white'>
@@ -34,7 +51,7 @@ const SectionFaq = () => {
                 </svg>
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default SectionFaq
+export default SectionFaq;

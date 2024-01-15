@@ -15,7 +15,7 @@ const SectionHero = () => {
                         <Button text='Comprar café' styles='py-3 px-6 bg-GreenAll text-white rounded ' linkTo="/" />
                     </div>
                 </div>
-                <Image src='/assets/cafehero.jpeg'width={588} height={390} alt='cafe' className='rounded-[20px]'/>
+                <Image src='/assets/cafehero.jpeg' width={588} height={390} alt='cafe' className='rounded-[20px]'/>
             </div>
         </div>
     )
