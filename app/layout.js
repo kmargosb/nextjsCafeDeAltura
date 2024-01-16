@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from './components/NavBar'
 import FooterCopyRight from './components/FooterCopyRight'
+import DataCoffeeContextProvider from './context/DataCoffee'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
 
-        <NavBar/>
-        {children}
-        <FooterCopyRight/>
+        <DataCoffeeContextProvider>
+          <NavBar />
+          {children}
+          <FooterCopyRight />
+        </DataCoffeeContextProvider>
 
       </body>
     </html>
