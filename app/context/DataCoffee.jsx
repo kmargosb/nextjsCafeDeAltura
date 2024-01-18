@@ -12,7 +12,7 @@ export default function DataCoffeeContextProvider({ children }) {
 	const textTitleHome = 'Novedades'
 	const textTitleShop = 'Últimos orígenes'
 	const styleHome = `flex gap-6 w-[1200px]`
-	const styleShop = `flex flex-wrap gap-6 w-[1200px]`
+	const styleShop = `flex flex-wrap gap-6  w-[1200px]`
 	const limit = 4
 
 	useEffect(() => {
