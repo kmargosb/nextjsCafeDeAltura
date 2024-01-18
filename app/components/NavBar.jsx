@@ -1,8 +1,19 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Button from './Button'
+import ShoppingCart from './ShoopingCart'
 
 const NavBar = () => {
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleButtonClick = () => {
+
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
         <div className='font-outfit flex py-3 px-10 justify-between items-center text-white bg-DarkGrey w-full'>
             <Link href="/" className='flex gap-2 items-center'>
@@ -13,7 +24,7 @@ const NavBar = () => {
                     </g>
                 </svg>
             </Link>
-            <div className='flex gap-4 text-[14px] leading-[16px] font-semibold'>
+            <div className=' flex gap-4 text-[14px] leading-[16px] font-semibold'>
                 <Link href="/shop" className='p-2 rounded-[10px] hover:bg-hover-nav' >Tienda</Link>
                 <Link href="/suscription" className='p-2 rounded-[10px] hover:bg-hover-nav'>Suscripción</Link>
                 <Link href="/para_empresas" className='p-2 rounded-[10px] hover:bg-hover-nav'>Para empresas</Link>
@@ -27,14 +38,16 @@ const NavBar = () => {
                     </svg>
                     <h2>+34 919 49 05 18</h2>
                 </div>
-                <Button linkTo='/logIn' styles='bg-Grey py-3 px-6 rounded text-[14px] leading-[16px] font-semibold' text="Iniciar sesión" />
+                <Button styles='bg-Grey py-3 px-6 rounded text-[14px] leading-[16px] font-semibold' text="Iniciar sesión" />
             </div>
-            <Link href="/bagshop">
-                <svg className='py-[2px] px-[3.1px]' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 22" fill="none">
+            <button className='w-6 h-6' onClick={handleButtonClick}>                
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 22" fill="none">
                     <path d="M1.97738 8.84C2.0176 8.33881 2.24513 7.87115 2.61465 7.53017C2.98417 7.18918 3.46857 6.9999 3.97138 7H16.0294C16.5322 6.9999 17.0166 7.18918 17.3861 7.53017C17.7556 7.87115 17.9832 8.33881 18.0234 8.84L18.8264 18.84C18.8485 19.1152 18.8133 19.392 18.7232 19.6529C18.6331 19.9139 18.4899 20.1533 18.3027 20.3562C18.1155 20.5592 17.8883 20.7211 17.6354 20.8319C17.3825 20.9427 17.1095 20.9999 16.8334 21H3.16738C2.8913 20.9999 2.61823 20.9427 2.36536 20.8319C2.11249 20.7211 1.88529 20.5592 1.69808 20.3562C1.51086 20.1533 1.36768 19.9139 1.27755 19.6529C1.18742 19.392 1.15229 19.1152 1.17438 18.84L1.97738 8.84V8.84Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M14 10V5C14 3.93913 13.5786 2.92172 12.8284 2.17157C12.0783 1.42143 11.0609 1 10 1C8.93913 1 7.92172 1.42143 7.17157 2.17157C6.42143 2.92172 6 3.93913 6 5V10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-            </Link>
+            </button>
+
+            {isModalOpen && <ShoppingCart/>}
         </div>
     )
 }

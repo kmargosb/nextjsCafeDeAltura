@@ -1,11 +1,11 @@
 import React from 'react'
 import Link  from 'next/link';
 
-const Button = ({text,styles,linkTo}) => {
+const Button = ({text,styles,linkTo,onClick}) => {
   
   return (
     
-      <Link href={linkTo}> <button className={styles}>{text}</button> </Link>
+      <button onClick={onClick} className={styles}> {text} </button>
    
   )
 }

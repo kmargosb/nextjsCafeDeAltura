@@ -12,10 +12,7 @@ const Home = () => {
     <div>
         <SectionHero />
         <SectionCards />
-        <SectionCoffeeCards
-          style={`flex gap-6 w-[1200px]`}
-          seeAll={true}
-        />
+        <SectionCoffeeCards/>
         <SectionFaq />
         <SectionFeature />
         <SectionForm />

@@ -81,7 +81,7 @@ const SectionForm = () => {
                                 name="escribe" id="escribe" cols="200" rows="5" placeholder='¿En qué podemos ayudarte?' ></textarea>
                         </div>
                         <div className='flex gap-3 h-5'>
-                            <input type="checkbox" name="check" id="check" className='w-4 h-4' />
+                            <input type="checkbox" name="check" id="check" className='w-4 h-4 hover:bg-accent ' />
                             <p className='text-gray-700 text-[14px] leading-4'>
                                 Acepto la <Link href='/' className='font-semibold underline'>Política de privacidad </Link>
                                 y los <Link href='/' className='font-semibold underline'>Términos y condiciones.</Link>
