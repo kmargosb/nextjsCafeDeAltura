@@ -21,15 +21,29 @@ const cartReducer = (state, dispatch) => {
                         : producto
                 );
             }
-            // Actualizar el localStorage
+
             localStorage.setItem('cart', JSON.stringify(updatedState));
             return updatedState;
 
         case "REMOVE_ITEM":
             const newState = state.filter((item) => item.id !== dispatch.product._id);
-            // Actualizar el localStorage
+
             localStorage.setItem('cart', JSON.stringify(newState));
             return newState;
+
+        case "ADDITION":
+            return state.map((producto) =>
+                producto.id === dispatch.product._id
+                    ? { ...producto, quantity: producto.quantity + 1 }
+                    : producto
+            );
+
+        case "SUBTRACTION":
+            return state.map((producto) =>
+                producto.id === dispatch.product._id && producto.quantity > 1
+                    ? { ...producto, quantity: producto.quantity - 1 }
+                    : producto
+            );
 
         default:
             return {

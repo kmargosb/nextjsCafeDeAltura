@@ -13,10 +13,9 @@ const DataCoffeeContextProvider = ({ children }) => {
   const styleShop = `flex flex-wrap gap-6 w-[1200px]`;
   const limit = 4;
 
-  // Obtener el estado inicial del carrito desde el localStorage
+  // cart
   const initialCartState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart')) || [] : [];
 
-  // cart
   const [cart, dispatch] = useReducer(cartReducer, initialCartState);
 
   useEffect(() => {
@@ -34,12 +33,7 @@ const DataCoffeeContextProvider = ({ children }) => {
     getData();
   }, []);
 
-  // Guardar el estado del carrito en el localStorage cada vez que cambie
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-		localStorage.setItem('cart', JSON.stringify(cart));
-	  }
-	}, [cart]);
+  useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart]);
 
   return (
     <DataCoffeeContext.Provider value={{ coffeeData, textTitleHome, textTitleShop, styleShop, styleHome, limit, cart, dispatch }}>
