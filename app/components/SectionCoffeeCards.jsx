@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import CoofeeCards from './CoffeeCards'
 import Link from 'next/link';
 import Image from 'next/image';
@@ -18,13 +18,12 @@ const SectionCoffeeCards = ({ limit, style, renderTrue, gap, padd }) => {
         });
     };
 
-
     if (!coffeeData) {
         return <div className='flex justify-center items-center h-[606.6px] text-black text-2xl'>Cargando...</div>;
     };
 
     return (
-        <div className={`font-outfit flex flex-col ${gap} justify-center items-center ${padd}`}>
+        <div className={`flex flex-col ${gap} justify-center items-center ${padd}`}>
             {renderTrue && <h2 className='text-GreenAll font-medium text-[24px] leading-7'>{textTitleHome}</h2>}
             <div className={style}>
                 {coffeeData?.slice(0, limit).map((data, i) => {

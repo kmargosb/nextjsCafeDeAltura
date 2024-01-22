@@ -4,7 +4,7 @@ import Button from './Button'
 
 const SectionForm = () => {
     return (
-        <div className='font-outfit flex justify-center bg-Taupe w-full'>
+        <div className='flex justify-center bg-Taupe w-full'>
             <div className='flex justify-center items-center gap-6'>
                 <div className='flex flex-col justify-center gap-8 w-[588px]'>
                     <div className='flex flex-col w-full gap-3'>

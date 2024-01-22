@@ -2,7 +2,7 @@ import React from 'react';
 
 const CardFaq = ({ question, answer, isVisible, onToggle }) => {
     return (
-        <div className='font-outfit w-[668px] p-6 flex flex-col gap-4 rounded-[10px] cursor-pointer bg-OffWhite' onClick={onToggle}>
+        <div className='w-[668px] p-6 flex flex-col gap-4 rounded-[10px] cursor-pointer bg-OffWhite' onClick={onToggle}>
             <div className='flex justify-between items-center'>
                 <h3 className='text-[18px] text-DarkGrey font-semibold leading-6'>{question}</h3>
                 <svg className={`text-gray-900 transition-transform transform ${isVisible ? 'rotate-180' : ''}`} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 21" fill="none">

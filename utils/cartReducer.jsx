@@ -21,14 +21,11 @@ const cartReducer = (state, dispatch) => {
                         : producto
                 );
             }
-
-            localStorage.setItem('cart', JSON.stringify(updatedState));
             return updatedState;
 
         case "REMOVE_ITEM":
             const newState = state.filter((item) => item.id !== dispatch.product._id);
 
-            localStorage.setItem('cart', JSON.stringify(newState));
             return newState;
 
         case "ADDITION":
@@ -44,6 +41,9 @@ const cartReducer = (state, dispatch) => {
                     ? { ...producto, quantity: producto.quantity - 1 }
                     : producto
             );
+
+        case "EMPTY_CART":
+            return state = []
 
         default:
             return {

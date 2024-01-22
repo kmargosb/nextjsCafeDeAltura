@@ -33,7 +33,7 @@ const SectionCards = () => {
     }
 
     return (
-        <div className="font-outfit flex flex-col gap-6 items-center w-full py-12 px-[147px]" style={backgroundDiv}>
+        <div className="flex flex-col gap-6 items-center w-full py-12 px-[147px]" style={backgroundDiv}>
             <h2 className='text-white font-medium text-[24px] leading-7'>Café con las mejores condiciones</h2>
             <div className='flex gap-6 w-[996px]'>
 

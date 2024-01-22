@@ -29,7 +29,7 @@ const SectionFaq = () => {
     };
 
     return (
-        <div className='font-outfit bg-GreenAll w-full flex flex-col justify-center items-center gap-6 py-12 px-[386px]'>
+        <div className='bg-GreenAll w-full flex flex-col justify-center items-center gap-6 py-12 px-[386px]'>
             <h2 className='text-white font-medium text-[24px] leading-7'>Preguntas frecuentes</h2>
             <div className='flex flex-col items-center gap-4 mt-4'>
                 <div className='flex flex-col gap-4'>

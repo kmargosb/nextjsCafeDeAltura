@@ -8,9 +8,7 @@ export const DataCoffeeContext = createContext(null);
 const DataCoffeeContextProvider = ({ children }) => {
   const [coffeeData, setCoffeeData] = useState(null);
   const textTitleHome = 'Novedades';
-  const textTitleShop = 'Últimos orígenes';
   const styleHome = `flex gap-6 w-[1200px]`;
-  const styleShop = `flex flex-wrap gap-6 w-[1200px]`;
   const limit = 4;
 
   // cart
@@ -36,7 +34,7 @@ const DataCoffeeContextProvider = ({ children }) => {
   useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart]);
 
   return (
-    <DataCoffeeContext.Provider value={{ coffeeData, textTitleHome, textTitleShop, styleShop, styleHome, limit, cart, dispatch }}>
+    <DataCoffeeContext.Provider value={{ coffeeData, textTitleHome, styleHome, limit, cart, dispatch }}>
       {children}
     </DataCoffeeContext.Provider>
   );

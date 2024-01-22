@@ -4,7 +4,7 @@ import Button from './Button'
 
 const SectionFooter = () => {
     return (
-        <div className='font-outfit flex flex-col items-center gap-[38px] w-full bg-Black text-white' >
+        <div className='flex flex-col items-center gap-[38px] w-full bg-Black text-white' >
             <div className='flex flex-col gap-4 pt-[29px] pb-[38px] w-[1200px]'>
                 <Link href="/" className='flex gap-2 items-center'>
                     <h2 className='text-[23px] leading-[35px]'>cafedealtura.com</h2>

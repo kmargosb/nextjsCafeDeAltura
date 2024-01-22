@@ -3,7 +3,7 @@ import React from 'react'
 
 const Card = ({ textH3, textP, imagenSvg }) => {
     return (
-        <div className='font-outfit flex flex-col gap-4 justify-center items-center w-full bg-white p-6 rounded-lg border border-OffWhite'>
+        <div className='flex flex-col gap-4 justify-center items-center w-full bg-white p-6 rounded-lg border border-OffWhite'>
             <div className='bg-GreenAll p-3 rounded-[20px]'>
                 <Image src={imagenSvg} alt='icon' width={40} height={40}/>
             </div>
