@@ -6,8 +6,8 @@ import cartReducer from '../../utils/cartReducer';
 export const DataCoffeeContext = createContext(null);
 
 const DataCoffeeContextProvider = ({ children }) => {
+
   const [coffeeData, setCoffeeData] = useState(null);
-  const textTitleHome = 'Novedades';
   const styleHome = `flex gap-6 w-[1200px]`;
   const limit = 4;
 
@@ -34,7 +34,7 @@ const DataCoffeeContextProvider = ({ children }) => {
   useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart]);
 
   return (
-    <DataCoffeeContext.Provider value={{ coffeeData, textTitleHome, styleHome, limit, cart, dispatch }}>
+    <DataCoffeeContext.Provider value={{ coffeeData, styleHome, limit, cart, dispatch }}>
       {children}
     </DataCoffeeContext.Provider>
   );

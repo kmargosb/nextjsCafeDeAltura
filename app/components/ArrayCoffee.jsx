@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 import CoofeeCards from './CoffeeCards'
 import { DataCoffeeContext } from '../context/DataCoffee';
 
-const ArrayCoffee = () => {
+const ArrayCoffee = ({ limit, style }) => {
 
     const { coffeeData, dispatch } = useContext(DataCoffeeContext);
 
