@@ -1,5 +1,7 @@
 const cartReducer = (state, dispatch) => {
+
     switch (dispatch.action) {
+
         case "ADD_ITEM":
             const cafe = state.find((producto) => producto.id === dispatch.product._id);
             let updatedState;
@@ -25,7 +27,6 @@ const cartReducer = (state, dispatch) => {
 
         case "REMOVE_ITEM":
             const newState = state.filter((item) => item.id !== dispatch.product._id);
-
             return newState;
 
         case "ADDITION":

@@ -45,14 +45,14 @@ const SectionFooter = () => {
                             linkTo="/"
                         />
                     </div>
-                    <div className='flex flex-col gap-4 font-semibold leading-4 text-[14px] relative left-[45px]'>
+                    <div className='flex flex-col gap-4 font-semibold leading-4 text-[14px] relative left-[55px]'>
                         <Link href="/shop">Tienda</Link>
                         <Link href="/suscription">Suscripción</Link>
                         <Link href="/para_empresas">Para empresas</Link>
                         <Link href="/about_us">Sobre nosotros</Link>
                         <Link href="/contact">Contacto</Link>
                     </div>
-                    <div className='flex flex-col gap-4 font-semibold leading-4 text-[14px] w-[255px] relative top-[3px] right-[77px] bottom-[69px]'>
+                    <div className='flex flex-col gap-4 font-semibold leading-4 text-[14px] w-[255px] relative top-[3px] right-[67px] bottom-[69px]'>
                         <Link href="/privacy_politics">Política de privacidad</Link>
                         <Link href="/cookies_politics">Politica de cookies</Link>
                         <Link href="/terms">Términos y condiciones</Link>

@@ -71,7 +71,7 @@ const SectionForm = () => {
                                     <option value="+34">ES</option>
                                     <option value="+58">VE</option>
                                 </select>
-                                <input type="text" name="telefono" id="telefono" className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-10 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                                <input type="text" name="telefono" id="telefono" className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-11 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                                     placeholder="+1 (555) 987-6543" />
                             </div>
                         </div>

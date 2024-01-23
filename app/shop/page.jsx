@@ -7,7 +7,7 @@ const Shop = () => {
 
   return (
 
-    <div>
+    <div className='pt-16'>
       <div className='flex flex-col justify-center items-center gap-6 p-10'>
         <h2 className='text-GreenAll font-medium text-[24px] leading-7'>Últimos orígenes</h2>
         <ArrayCoffee style='flex flex-wrap gap-6 w-[1200px]' gap='gap-6' limit={8} />

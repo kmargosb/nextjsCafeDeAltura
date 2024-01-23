@@ -7,7 +7,7 @@ import Image from 'next/image'
 const SectionHero = () => {
     return (
         <div className='bg-OffWhite pt-[44.6px] pb-[45.4px] px-10 w-full flex justify-center'>
-            <div className='flex justify-between items-center gap-6 w-[1280px]'>
+            <div className='flex justify-between items-center gap-6 w-[1200px]'>
                 <div className='flex flex-col gap-4 w-[457px] justify-center items-start'>
                     <h3 className='text-[24px] text-GreenAll font-medium leading-7'>Pruébalo en nuestro coffee shop</h3>
                     <p className='text-[14px] text-BlackP leading-4'>

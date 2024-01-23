@@ -11,10 +11,21 @@ const DataCoffeeContextProvider = ({ children }) => {
   const styleHome = `flex gap-6 w-[1200px]`;
   const limit = 4;
 
-  // cart
+  // estado inicial del carrito
   const initialCartState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart')) || [] : [];
 
+  // estado y funcion para abrir el carrito
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleButtonClick = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   const [cart, dispatch] = useReducer(cartReducer, initialCartState);
+
+  // subtotal carrito
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  // quantity total
+  const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0)
 
   useEffect(() => {
     const getData = async () => {
@@ -34,7 +45,19 @@ const DataCoffeeContextProvider = ({ children }) => {
   useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart]);
 
   return (
-    <DataCoffeeContext.Provider value={{ coffeeData, styleHome, limit, cart, dispatch }}>
+    <DataCoffeeContext.Provider value={
+      {
+        coffeeData,
+        styleHome,
+        limit,
+        cart,
+        subtotal,
+        totalQuantity,
+        isModalOpen,
+        dispatch,
+        handleButtonClick
+      }
+    }>
       {children}
     </DataCoffeeContext.Provider>
   );

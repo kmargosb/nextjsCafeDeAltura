@@ -9,7 +9,7 @@ import SectionCoffeeCards from './components/SectionCoffeeCards'
 
 const Home = () => {
   return (
-    <div>
+    <div className='pt-16'>
       <SectionHero />
       <SectionCards />
       <SectionCoffeeCards renderTrue={true} gap='gap-10' padd='p-10'/>
