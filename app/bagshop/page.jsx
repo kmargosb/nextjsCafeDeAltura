@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../components/ButtonVariants'
 import BagShopPage from './BagShopPage'
 import TotalCarritoPage from './TotalCarritoPage'
+import ProductsPage from './ProductsPage'
 
 const page = () => {
     return (
@@ -9,10 +10,7 @@ const page = () => {
             <BagShopPage/>
             <div className='flex justify-center gap-6 w-[1200px]'>
                 <div className='p-2 flex flex-col gap-6'>
-                    <h3 className='font-semibold text-[18px] leading-6'>Productos</h3>
-                    <div class="cart-products">
-                        {/* RENDER */}
-                    </div>
+                    <ProductsPage/>
                     <h3 className='font-semibold text-[18px] leading-6'>Seleccionar envío</h3>
                     <form >
                         <div>
