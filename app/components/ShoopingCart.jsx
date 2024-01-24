@@ -37,8 +37,8 @@ const ShoppingCart = () => {
    if (cart.length === 0) {
       return (
          <div className="absolute top-0 w-full">
-            <div className="bg-slate-800 opacity-50 absolute top-0 -left-10 w-screen h-screen" onClick={handleButtonClick}></div>
-            <div className="flex flex-col items-center absolute right-10 top-16 bg-slate-950 bg-opacity-50 w-[400px] gap-3 pb-6 rounded-b-2xl select-none">
+            <div className="bg-DarkGrey opacity-50 absolute top-0 -left-10 w-screen h-screen" onClick={handleButtonClick}></div>
+            <div className="flex flex-col items-center absolute right-10 top-16 bg-[#7B9C81] bg-opacity-90 w-[400px] gap-3 pb-6 rounded-b-2xl select-none">
                <h2 className="text-2xl">El carrito está vacío</h2>
                <h3 className="cursor-pointer absolute top-1 right-5 text-2xl" onClick={handleButtonClick}>X</h3>
             </div>
@@ -48,8 +48,8 @@ const ShoppingCart = () => {
 
    return (
       <div className="absolute top-0 w-full">
-         <div className="bg-slate-800 opacity-50 absolute top-0 -left-10 w-screen h-screen" onClick={handleButtonClick}></div>
-         <div className="flex flex-col items-center absolute top-16 right-10 bg-slate-950 bg-opacity-50 w-[400px] gap-3 pb-6 rounded-b-2xl select-none">
+         <div className="bg-DarkGrey opacity-50 absolute top-0 -left-10 w-screen h-screen" onClick={handleButtonClick}></div>
+         <div className="flex flex-col items-center absolute top-16 right-10 bg-[#7B9C81] bg-opacity-90 w-[400px] gap-3 pb-6 rounded-b-2xl select-none">
             <div className="flex gap-3 justify-center items-center">
                <FaCartShopping />
                <h2 className="text-2xl">Shopping Cart</h2>

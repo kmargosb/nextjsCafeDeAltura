@@ -12,7 +12,7 @@ const Home = () => {
     <div className='pt-16'>
       <SectionHero />
       <SectionCards />
-      <SectionCoffeeCards renderTrue={true} gap='gap-10' padd='p-10'/>
+      <SectionCoffeeCards/>
       <SectionFaq />
       <SectionFeature />
       <SectionForm />
