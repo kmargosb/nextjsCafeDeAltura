@@ -35,7 +35,7 @@ const ProductsPage = () => {
                                     <path d="M18 12.8301H6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
-                            <p className='flex justify-center items-center bg-GreenB rounded-full w-6 h-6'>{item.quantity}</p>
+                            <p className='flex justify-center items-center text-GreenAll bg-GreenB rounded-full w-6 h-6'>{item.quantity}</p>
                             <div className="cursor-pointer w-6 h-6" onClick={() => handleAdd(item.id)}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 25" fill="none">
                                     <path d="M12 6.83008V12.8301M12 12.8301V18.8301M12 12.8301H18M12 12.8301H6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

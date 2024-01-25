@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
       <body className={outfit.className}>
 
         <DataCoffeeContextProvider>
-          <NavBar />
+          <NavBar/>
           {children}
-          <FooterCopyRight />
+          <FooterCopyRight/>
         </DataCoffeeContextProvider>
 
       </body>
