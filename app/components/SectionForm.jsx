@@ -1,8 +1,16 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
-import Button from './Button'
+import ButtonVariants from './ButtonVariants'
+import { useForm } from 'react-hook-form'
 
 const SectionForm = () => {
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
+    const submit = handleSubmit((data) => { console.log(data) })
+
     return (
         <div className='flex justify-center bg-Taupe w-full'>
             <div className='flex justify-center items-center gap-6'>
@@ -54,40 +62,108 @@ const SectionForm = () => {
                     </div>
                 </div>
                 <div className='flex justify-center items-center bg-white w-[588px] py-8 pl-12 pr-8'>
-                    <form className='flex flex-col items-start gap-6 w-[470px]'>
+                    <form
+                        onSubmit={submit}
+                        className='flex flex-col items-start gap-6 w-[470px]'
+                    >
                         <div className='w-full flex flex-col gap-1'>
                             <label htmlFor="name" className='text-gray-700 text-xs'>Nombre completo</label>
-                            <input type="text" name="name" id="name" className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp' />
+                            <input
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: "Escribe tu nombre por favor"
+                                    },
+                                    minLength: {
+                                        value: 3,
+                                        message: "Tu nombre debe tener minimo 3 caracteres"
+                                    },
+                                    maxLength: {
+                                        value: 30,
+                                        message: "Tu nombre debe tener maximo 30 caracteres"
+                                    }
+                                })}
+                                type="text" name="name" id="name"
+                                className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                            />
+                            {errors.name && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2568px]'>{errors.name.message}</span>}
                         </div>
                         <div className='w-full flex flex-col gap-1'>
                             <label htmlFor="email" className='text-gray-700 text-xs'>Email</label>
-                            <input type="text" name="email" id="email" className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp' />
+                            <input
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: "Necesitamos tu correo para contactarte"
+                                    },
+                                    pattern:{
+                                        value: /^[a-z0-9,_%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
+                                        message: "Correo no valido"
+                                    }
+                                })}
+                                type="email" name="email" id="email"
+                                className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                            />
+                            {errors.email && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2648px]'>{errors.email.message}</span>}
                         </div>
                         <div className='w-full flex flex-col gap-1'>
-                            <label htmlFor="telefono" className='text-gray-700 text-xs'>Teléfono</label>
+                            <label htmlFor="phone" className='text-gray-700 text-xs'>Teléfono</label>
                             <div className='flex'>
-                                <select className='relative left-2 bg-transparent border-none outline-none z-10'>
+                                <select
+                                    {...register("coutryCode")}
+                                    className='relative left-2 bg-transparent border-none outline-none z-10'
+                                >
                                     <option value="+1">US</option>
                                     <option value="+34">ES</option>
                                     <option value="+58">VE</option>
+
                                 </select>
-                                <input type="text" name="telefono" id="telefono" className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-11 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
-                                    placeholder="+1 (555) 987-6543" />
+                                <input
+                                    {...register("phone", {
+                                        required: {
+                                            value: true,
+                                            message: "Necesitamos tu numero telefonico para contactarte"
+                                        },
+                                        minLength: {
+                                            value: 9,
+                                            message: "En Espana minimo son 9 digitos"
+                                        }
+                                    })}
+                                    type="text" name="phone" id="phone"
+                                    placeholder="+1 (555) 987-6543"
+                                    className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-11 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                                />
+                                {errors.phone && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2730px]'>{errors.phone.message}</span>}
                             </div>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <label htmlFor="escribe" className='h-[17px]'></label>
-                            <textarea className='w-full resize-y max-h-[122px] pt-[13px] pl-[17px] border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
-                                name="escribe" id="escribe" cols="200" rows="5" placeholder='¿En qué podemos ayudarte?' ></textarea>
+                            <textarea
+                                {...register("escribe")}
+                                className='w-full resize-y max-h-[122px] pt-[13px] pl-[17px] border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                                name="escribe" id="escribe" cols="200" rows="5" placeholder='¿En qué podemos ayudarte?'
+                            ></textarea>
                         </div>
                         <div className='flex gap-3 h-5'>
-                            <input type="checkbox" name="check" id="check" className='w-4 h-4 accent-[#2A5B45] ' />
+                            <input
+                                {...register("terminos", {
+                                    required: {
+                                        value: true,
+                                        message: "Acepta los terminos y condiciones"
+                                    }
+                                })}
+                                type="checkbox" name="terminos" id="terminos"
+                                className='w-4 h-4 accent-[#2A5B45]'
+                            />
                             <p className='text-gray-700 text-[14px] leading-4'>
-                                Acepto la <Link href='/' className='font-semibold underline'>Política de privacidad </Link>
-                                y los <Link href='/' className='font-semibold underline'>Términos y condiciones.</Link>
+                                Acepto la
+                                <Link href='/' className='font-semibold underline'>Política de privacidad </Link>
+                                y los
+                                <Link href='/' className='font-semibold underline'>Términos y condiciones.</Link>
                             </p>
+                            {errors.terminos && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2940px]'>{errors.terminos.message}</span>}
                         </div>
-                        <Button text='Enviar' styles='text-white py-3 px-6 bg-GreenAll border-none rounded-[4px] text-[14px] leading-4 font-semibold' linkTo="/" />
+                        <ButtonVariants type="submit" intent="verde" size="normal" roundness="normal">Enviar</ButtonVariants>
                     </form>
                 </div>
             </div>

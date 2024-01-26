@@ -2,7 +2,7 @@
 
 import React, { useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
-import Button from './Button'
+import ButtonVariants from './ButtonVariants'
 import ShoppingCart from './ShoopingCart'
 import { DataCoffeeContext } from '../context/DataCoffee'
 
@@ -17,6 +17,7 @@ const NavBar = () => {
             setIsQuantityOpen(true)
         } else { setIsQuantityOpen(false) }
     }, [totalQuantity]);
+
 
     return (
         <div className='z-50 fixed flex py-3 px-10 justify-between items-center text-white bg-DarkGrey w-full'>
@@ -42,7 +43,7 @@ const NavBar = () => {
                     </svg>
                     <h2>+34 919 49 05 18</h2>
                 </div>
-                <Button styles='bg-Grey py-3 px-6 rounded text-[14px] leading-[16px] font-semibold' text="Iniciar sesión" />
+                <ButtonVariants click={()=> console.log('hola')} intent="gris" size="normal" roundness="normal">Iniciar sesión</ButtonVariants>
             </div>
             <button className='flex gap-2' onClick={handleButtonClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 22" fill="none">

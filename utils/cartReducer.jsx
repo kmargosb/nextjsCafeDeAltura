@@ -27,7 +27,6 @@ const cartReducer = (state, dispatch) => {
 
         case "REMOVE_ITEM":
             const newState = state.filter((item) => item.id !== dispatch.product._id);
-            // console.log(newState)
             return newState;
 
         case "ADDITION":
@@ -37,12 +36,18 @@ const cartReducer = (state, dispatch) => {
                     : producto
             );
 
-        case "SUBTRACTION":
-            return state.map((producto) =>
-                producto.id === dispatch.product._id && producto.quantity > 1
-                    ? { ...producto, quantity: producto.quantity - 1 }
-                    : producto
-            );
+            case "SUBTRACTION":
+                const updateCart = state.map((producto) =>
+                    producto.id === dispatch.product._id
+                        ? producto.quantity > 1
+                            ? { ...producto, quantity: producto.quantity - 1 }
+                            : null
+                        : producto
+                ).filter(Boolean);
+            
+                return updateCart.length > 0
+                    ? updateCart
+                    : state.filter((item) => item.id !== dispatch.product._id);
 
         case "EMPTY_CART":
             return state = []

@@ -1,9 +1,14 @@
+'use client'
 import React from 'react'
-import Button from './Button'
+import ButtonVariants from './ButtonVariants'
 import Image from 'next/image'
+import Link from 'next/link'
+
 // import ButtonVariants from './ButtonVariants'
 
 const SectionHero = () => {
+
+
     return (
         <div className='bg-OffWhite py-12 px-10 w-[full] flex justify-center'>
             <div className='flex justify-center items-center gap-6 w-[1200px] h-[390px]'>
@@ -12,12 +17,13 @@ const SectionHero = () => {
                     <h1 className='text-[40px] font-semibold leading-[44px]'>El mejor café del mundo, ahora en tu casa.</h1>
                     <p className='text-[14px] text-BlackP leading-4'>Trabajamos con agricultores de todo el mundo para seleccionar los mejores granos de café y que puedas viajar desde la comodidad de tu hogar.</p>
                     <div className='flex gap-4'>
-                        <Button text='Descubrir orígenes' styles='py-3 px-6 bg-Black text-white rounded' linkTo="/" />
-                        <Button text='Comprar café' styles='py-3 px-6 bg-GreenAll text-white rounded ' linkTo="/" />
-                        {/* <ButtonVariants>Comprar café</ButtonVariants> */}
+                        <ButtonVariants click={() => console.log('hola')} intent="negro" size="normal" roundness="normal">Descubrir orígenes</ButtonVariants>
+                        <Link href="/shop">
+                            <ButtonVariants intent="verde" size="normal" roundness="normal">Comprar café</ButtonVariants>
+                        </Link>
                     </div>
                 </div>
-                <Image src='/assets/cafehero.jpeg' width={588} height={390} alt='cafe' className=' mim-w-[588px] h-[390px] rounded-[20px]'/>
+                <Image src='/assets/cafehero.jpeg' width={588} height={390} alt='cafe' className=' mim-w-[588px] h-[390px] rounded-[20px]' />
             </div>
         </div>
     )
