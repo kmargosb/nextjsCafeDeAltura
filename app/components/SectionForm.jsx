@@ -130,7 +130,7 @@ const SectionForm = () => {
                                         }
                                     })}
                                     type="text" name="phone" id="phone"
-                                    placeholder="+1 (555) 987-6543"
+                                    placeholder="123456789"
                                     className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-11 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                                 />
                                 {errors.phone && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2730px]'>{errors.phone.message}</span>}

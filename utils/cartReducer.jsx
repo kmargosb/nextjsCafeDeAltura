@@ -54,8 +54,7 @@ const cartReducer = (state, dispatch) => {
 
         default:
             return {
-                ...state,
-                total: calculateTotal(state),
+                ...state
             };
     }
 };

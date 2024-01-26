@@ -23,9 +23,22 @@ const DataCoffeeContextProvider = ({ children }) => {
   const [cart, dispatch] = useReducer(cartReducer, initialCartState);
 
   // subtotal carrito
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
   // quantity total
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0)
+  // tipo de envio carrito
+  const [delivery, setDelivery] = useState("GRATIS")
+  // total total  
+  const totalCart = () =>{
+    let totalCart;
+    if(delivery === "GRATIS"){
+      return totalCart = subtotal + 0
+    } else {
+      return totalCart = subtotal + 9
+    } 
+  }
+  const totalTotal = totalCart(delivery)
+  const ivaCart = totalTotal * 0.21
 
   useEffect(() => {
     const getData = async () => {
@@ -54,8 +67,12 @@ const DataCoffeeContextProvider = ({ children }) => {
         subtotal,
         totalQuantity,
         isModalOpen,
+        delivery,
+        ivaCart,
+        totalTotal,
         dispatch,
-        handleButtonClick
+        handleButtonClick,
+        setDelivery,
       }
     }>
       {children}

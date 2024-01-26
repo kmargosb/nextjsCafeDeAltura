@@ -21,6 +21,10 @@ const ProductsPage = () => {
         })
     }
 
+    if(cart.length === 0){
+        return <div></div>;
+    }
+
     return (
         <div className='felx flex-col '>
             <h3 className='font-semibold text-[18px] leading-6'>
