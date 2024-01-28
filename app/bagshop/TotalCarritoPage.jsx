@@ -9,7 +9,7 @@ const TotalCarritoPage = ({ showSingleButton, noButton, width }) => {
 
     const { subtotal, totalTotal, ivaCart } = useContext(DataCoffeeContext)
 
-    const delivery = localStorage.getItem('delivery')
+    const delivery = typeof window !== 'undefined' ? localStorage.getItem('delivery') : ''
     
     const formatDelivery = () => delivery === "9" ? Number(delivery).toFixed(2) + ' €' : "GRATIS";
 
