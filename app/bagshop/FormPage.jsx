@@ -12,8 +12,10 @@ const FormPage = () => {
         if(event.target.value == "9"){
             const selectedValue = Number(event.target.value)
             setDelivery(selectedValue);
+            localStorage.setItem('delivery', JSON.stringify(selectedValue))
         }else{
             setDelivery(event.target.value)
+            localStorage.setItem('delivery', JSON.stringify(event.target.value))
         } 
     };
     if(cart.length === 0){
@@ -23,11 +25,11 @@ const FormPage = () => {
         <div className='flex flex-col gap-6'>
             <h3 className='font-semibold text-[18px] leading-6'>Seleccionar envío</h3>
             <form>
-                <div className='flex gap-4 border-b-Taupe border-b pb-6'>
+                <div className='flex gap-4 border-b-Taupe border-b pb-6 items-center'>
                     <input
                         type="radio"
                         id="envioGratis"
-                        className='accent-GreenAll'
+                        className='accent-GreenAll w-4 h-4'
                         name='tipoEnvio'
                         value="GRATIS"
                         {...register("tipoEnvio", {
@@ -46,11 +48,11 @@ const FormPage = () => {
                         <h3 className='flex whitespace-nowrap text-[18px] leading-6 font-semibold'>GRATIS</h3>
                     </label>
                 </div>
-                <div className='flex gap-4 pt-6'>
+                <div className='flex gap-4 pt-6 items-center'>
                     <input
                         type="radio"
                         id="envioUrgente"
-                        className='accent-GreenAll'
+                        className='accent-GreenAll w-4 h-4'
                         name="tipoEnvio"
                         value="9"
                         {...register("tipoEnvio", {

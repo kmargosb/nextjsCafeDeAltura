@@ -5,20 +5,16 @@ import { DataCoffeeContext } from '../context/DataCoffee'
 import ButtonVariants from '../components/ButtonVariants'
 import Link from 'next/link'
 
-const TotalCarritoPage = ({showSingleButton}) => {
+const TotalCarritoPage = ({ showSingleButton, noButton, width }) => {
 
-    const { subtotal, delivery, totalTotal, ivaCart } = useContext(DataCoffeeContext)
+    const { subtotal, totalTotal, ivaCart } = useContext(DataCoffeeContext)
 
-    const formatDelivery = () => {
-        if (delivery === 9) {
-            return delivery.toFixed(2) + ' €';
-        } else {
-            return delivery;
-        }
-    };
+    const delivery = localStorage.getItem('delivery')
+    
+    const formatDelivery = () => delivery === "9" ? Number(delivery).toFixed(2) + ' €' : "GRATIS";
 
     return (
-        <div className='flex flex-col p-6 gap-4 w-[384px] max-h-[280px] bg-OffWhite'>
+        <div className={`flex flex-col p-6 gap-4 w-[${width}] max-h-[280px] bg-OffWhite`}>
             <div className='flex flex-col gap-4 w-full'>
                 <h2 className='text-[18px] leading-6 font-semibold pb-4 border-b border-Taupe'>Total del carrito</h2>
                 <div className='border-b-Taupe border-b flex flex-col gap-4 pb-4'>
@@ -39,24 +35,28 @@ const TotalCarritoPage = ({showSingleButton}) => {
                     </div>
                 </div>
             </div>
-            <div className='flex gap-4'>
-                {showSingleButton ? (
-                    <ButtonVariants intent="verde" size="normal" roundness="normal">
-                        {showSingleButton}
-                    </ButtonVariants>
-                ) : (
-                    <>
-                        <Link href="/checkout">
+            {!noButton ? (
+                <div className='flex gap-4'>
+                    {showSingleButton ? (
+                        <Link href='/success'>
                             <ButtonVariants intent="verde" size="normal" roundness="normal">
-                                Ir a Checkout
+                                {showSingleButton}
                             </ButtonVariants>
                         </Link>
-                        <Link href="/shop" className='px-6 py-3 font-semibold text-[14px] leading-4 text-GreenAll'>
-                            Seguir comprando
-                        </Link>
-                    </>
-                )}
-            </div>
+                    ) : (
+                        <>
+                            <Link href="/checkout">
+                                <ButtonVariants intent="verde" size="normal" roundness="normal">
+                                    Ir a Checkout
+                                </ButtonVariants>
+                            </Link>
+                            <Link href="/shop" className='px-6 py-3 font-semibold text-[14px] leading-4 text-GreenAll'>
+                                Seguir comprando
+                            </Link>
+                        </>
+                    )}
+                </div>
+            ) : null}
         </div>
     )
 }

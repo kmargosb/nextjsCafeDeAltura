@@ -14,7 +14,7 @@ const page = () => {
                     <ProductsPage/>
                     <FormPage/>
                 </div>
-                <TotalCarritoPage/>
+                <TotalCarritoPage width='384px'/>
             </div>
         </div>
     )

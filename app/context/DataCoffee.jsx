@@ -27,11 +27,12 @@ const DataCoffeeContextProvider = ({ children }) => {
   // quantity total
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0)
   // tipo de envio carrito
-  const [delivery, setDelivery] = useState("GRATIS")
+  const initialDeliveryState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('delivery')) || null : null;
+  const [delivery, setDelivery] = useState(initialDeliveryState)
   // total total  
   const totalCart = () =>{
     let totalCart;
-    if(delivery === "GRATIS"){
+    if(delivery === "GRATIS" || delivery === null){
       return totalCart = subtotal + 0
     } else {
       return totalCart = subtotal + 9
