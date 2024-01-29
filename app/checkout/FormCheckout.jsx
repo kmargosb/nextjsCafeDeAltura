@@ -135,12 +135,10 @@ const FormCheckout = () => {
                                 className='flex w-full h-[36px] py-[10px] px-2 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                             />
                         </div>
-
-
                         <div className="relative flex flex-col w-full gap-[3px]">
                             <label htmlFor="pais">Pais</label>
-                            <select name='pais' className="w-full appearance-none h-[36px] py-[10px] px-2 p-2 pr-10 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp">
-                                <option value="" selected disabled>Seleccionar</option>
+                            <select name='pais' className="w-full appearance-none h-[36px] py-[10px] px-2 p-2 pr-10 text-Grey rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp">
+                                <option value="" >Seleccionar</option>
                                 <option value="espana">España</option>
                                 <option value="francia">Francia</option>
                                 <option value="francia">Portugal</option>
@@ -152,9 +150,6 @@ const FormCheckout = () => {
                                 </svg>
                             </div>
                         </div>
-
-
-
                         <div className='flex gap-6'>
                             <div className='flex flex-col w-full gap-[3px]'>
                                 <label htmlFor="poblacion">Población</label>

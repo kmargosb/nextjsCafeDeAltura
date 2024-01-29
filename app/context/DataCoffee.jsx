@@ -30,13 +30,13 @@ const DataCoffeeContextProvider = ({ children }) => {
   const initialDeliveryState = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('delivery')) || null : null;
   const [delivery, setDelivery] = useState(initialDeliveryState)
   // total total  
-  const totalCart = () =>{
+  const totalCart = () => {
     let totalCart;
-    if(delivery === "GRATIS" || delivery === null){
+    if (delivery === "GRATIS" || delivery === null) {
       return totalCart = subtotal + 0
     } else {
       return totalCart = subtotal + 9
-    } 
+    }
   }
   const totalTotal = totalCart(delivery)
   const ivaCart = totalTotal * 0.21

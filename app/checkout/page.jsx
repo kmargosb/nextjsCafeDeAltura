@@ -1,6 +1,5 @@
 import React from 'react'
-import BagShopPage from '../bagshop/BagShopPage'
-import TotalCarritoPage from '../bagshop/TotalCarritoPage'
+import TotalCheckout from './TotalCheckout'
 import FormCheckout from './FormCheckout'
 
 const page = () => {
@@ -9,7 +8,7 @@ const page = () => {
       <h2 className='text-[24px] leading-7 text-GreenAll'>Checkout</h2>
       <div className='flex justify-center gap-6 w-[1200px]'>
         <FormCheckout/>
-        <TotalCarritoPage width='384px' showSingleButton="Pagar y realizar pedido" />
+        <TotalCheckout/>
       </div>
     </div>
   )

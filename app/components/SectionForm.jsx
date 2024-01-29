@@ -4,12 +4,17 @@ import React from 'react'
 import Link from 'next/link'
 import ButtonVariants from './ButtonVariants'
 import { useForm } from 'react-hook-form'
+import { Toaster, toast } from 'sonner'
 
 const SectionForm = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-    const submit = handleSubmit((data) => { console.log(data) })
+    const submit = handleSubmit((data) => { 
+        console.log(data) 
+        const mensajeToast = `Gracias ${data.name} por escribirnos, nos pondremos en contacto por ${data.email} o por tu numero telefonico`;
+        toast(<div className='text-center'>{mensajeToast}</div>, {duration: 3000})
+    })
 
     return (
         <div className='flex justify-center bg-Taupe w-full'>
@@ -96,7 +101,7 @@ const SectionForm = () => {
                                         value: true,
                                         message: "Necesitamos tu correo para contactarte"
                                     },
-                                    pattern:{
+                                    pattern: {
                                         value: /^[a-z0-9,_%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
                                         message: "Correo no valido"
                                     }
@@ -156,17 +161,22 @@ const SectionForm = () => {
                                 className='w-4 h-4 accent-[#2A5B45]'
                             />
                             <p className='text-gray-700 text-[14px] leading-4'>
-                                Acepto la
-                                <Link href='/' className='font-semibold underline'>Política de privacidad </Link>
-                                y los
+                                Acepto la&nbsp;
+                                <Link href='/' className='font-semibold underline'>Política de privacidad</Link>
+                                &nbsp;y los&nbsp;
                                 <Link href='/' className='font-semibold underline'>Términos y condiciones.</Link>
                             </p>
                             {errors.terminos && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2940px]'>{errors.terminos.message}</span>}
                         </div>
-                        <ButtonVariants type="submit" intent="verde" size="normal" roundness="normal">Enviar</ButtonVariants>
+                        <ButtonVariants
+                            
+                            type="submit" intent="verde" size="normal" roundness="normal">
+                            Enviar
+                        </ButtonVariants>
                     </form>
                 </div>
             </div>
+            <Toaster position="bottom-center"/>
         </div>
     )
 }

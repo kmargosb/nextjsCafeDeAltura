@@ -6,11 +6,11 @@ import ButtonVariants from '../components/ButtonVariants'
 import Link from 'next/link'
 
 const TotalCarritoPage = () => {
-    
+
     const { subtotal, totalTotal, ivaCart } = useContext(DataCoffeeContext)
 
     const delivery = typeof window !== 'undefined' ? localStorage.getItem('delivery') : ''
-    
+
     const formatDelivery = () => delivery === "9" ? Number(delivery).toFixed(2) + ' €' : "GRATIS";
 
     return (
@@ -35,16 +35,13 @@ const TotalCarritoPage = () => {
                     </div>
                 </div>
             </div>
-                <div className='flex gap-4'>
-                            <Link href="/checkout">
-                                <ButtonVariants intent="verde" size="normal" roundness="normal">
-                                    Ir a Checkout
-                                </ButtonVariants>
-                            </Link>
-                            <Link href="/shop" className='px-6 py-3 font-semibold text-[14px] leading-4 text-GreenAll'>
-                                Seguir comprando
-                            </Link>
-                </div>
+            <div className='flex gap-4 opacity-[0.3]'>
+                <Link href='/success'>
+                    <ButtonVariants intent="verde" size="normal" roundness="normal">
+                        Pagar y realizar pedido
+                    </ButtonVariants>
+                </Link>
+            </div>
         </div>
     )
 }

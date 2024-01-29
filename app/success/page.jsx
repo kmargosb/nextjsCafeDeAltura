@@ -1,14 +1,14 @@
 import React from 'react'
 import check from '../../public/assets/Check.png'
 import Image from 'next/image'
-import TotalCarritoPage from '../bagshop/TotalCarritoPage'
+import TotalSuccess from './TotalSuccess'
 import ButtonVariants from '../components/ButtonVariants'
 import Link from 'next/link'
-import ProductsSuccess from './ProductsSuccess'
+
 
 const page = () => {
     return (
-        <div className='p-10 pt-[104px] flex flex-col items-center gap-6'>
+        <div className='p-10 pt-[104px] min-h-screen flex flex-col items-center gap-6'>
             <div className='bg-GreenAll w-16 h-16 rounded-[20px] p-3 flex justify-center items-center'>
                 <Image src={check} alt='check_icon' width={40} height={40}></Image>
             </div>
@@ -18,7 +18,7 @@ const page = () => {
                 <p>Lo recibirás dentro de las fechas acordadas en tu envío.</p>
                 <p>Hemos enviado un ticket a tu correo electrónico.</p>
             </div>
-            <TotalCarritoPage products={true} width='1200px' noButton={true} />
+            <TotalSuccess/>
             <Link href='/shop'>
                 <ButtonVariants intent='verde' size='normal' roundness='normal'>Volver a la tienda</ButtonVariants>
             </Link>
