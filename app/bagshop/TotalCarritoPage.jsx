@@ -6,8 +6,7 @@ import ButtonVariants from '../components/ButtonVariants'
 import Link from 'next/link'
 
 const TotalCarritoPage = ({ showSingleButton, noButton, width }) => {
-    useEffect(()=> {localStorage.removeItem('delivery')},[])
-
+    
     const { subtotal, totalTotal, ivaCart } = useContext(DataCoffeeContext)
 
     const delivery = typeof window !== 'undefined' ? localStorage.getItem('delivery') : ''
