@@ -8,12 +8,13 @@ import { Toaster, toast } from 'sonner'
 
 const SectionForm = () => {
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const submit = handleSubmit((data) => { 
         console.log(data) 
         const mensajeToast = `Gracias ${data.name} por escribirnos, nos pondremos en contacto por ${data.email} o por tu numero telefonico`;
         toast(<div className='text-center'>{mensajeToast}</div>, {duration: 3000})
+        reset();
     })
 
     return (
