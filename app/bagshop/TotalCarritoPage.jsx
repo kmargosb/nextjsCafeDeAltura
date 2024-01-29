@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { DataCoffeeContext } from '../context/DataCoffee'
 import ButtonVariants from '../components/ButtonVariants'
 import Link from 'next/link'
 
 const TotalCarritoPage = ({ showSingleButton, noButton, width }) => {
+    useEffect(()=> {localStorage.removeItem('delivery')},[])
 
     const { subtotal, totalTotal, ivaCart } = useContext(DataCoffeeContext)
 
