@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { auth, provider } from "../lib/firebase-config";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 export default function SignIn() {
   const router = useRouter();
@@ -137,13 +138,13 @@ export default function SignIn() {
               </div>
             </button>
             <p className="mt-8">
-              Need an account?
-              <a
+              Need an account?{" "}
+              <Link
                 href="/register"
                 className="text-blue-500 hover:text-blue-700 font-semibold"
               >
                 Create an account
-              </a>
+              </Link>
             </p>
           </div>
         </div>

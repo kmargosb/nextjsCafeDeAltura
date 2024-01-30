@@ -8,6 +8,7 @@ import { auth, provider } from "../lib/firebase-config";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import CommonForm from "@/components/CommonForm";
+import Link from "next/link";
 
 export default function Page() {
   const router = useRouter();
@@ -61,8 +62,8 @@ export default function Page() {
       <section className="flex flex-col md:flex-row h-screen items-center">
         <div className="bg-indigo-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
           <Image
-            width={200}
-            height={200}
+            width={1000}
+            height={1000}
             src="https://source.unsplash.com/random"
             alt=""
             className="w-full h-full object-cover"
@@ -95,12 +96,12 @@ export default function Page() {
             </button>
             <p className="mt-8">
               Need an account?{" "}
-              <a
-                href="#"
+              <Link
+                href="/login"
                 className="text-blue-500 hover:text-blue-700 font-semibold"
               >
                 Login
-              </a>
+              </Link>
             </p>
           </div>
         </div>
