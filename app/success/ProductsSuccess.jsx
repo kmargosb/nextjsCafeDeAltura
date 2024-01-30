@@ -21,7 +21,7 @@ const ProductsSuccess = () => {
                             <h3 className="font-semibold text-[14px] leading-4">{item.name}</h3>
                             <p className="text-[14px] leading-4">Paquete de café, 250 gr</p>
                         </div>
-                        <p className='flex whitespace-nowrap text-[18px] leading-6 font-semibold'>{item.price.toFixed(2) + ' €'}</p>
+                        <p className='flex whitespace-nowrap text-[18px] leading-6 font-semibold'>{item.price.toFixed(2).replace('.', ',') + ' €'}</p>
                     </div>
                 </div>
             ))}

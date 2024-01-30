@@ -68,7 +68,7 @@ const FormPage = () => {
                             <b className="font-semibold text-[14px] leading-4">Envío Urgente 24h</b>
                             <p className="text-[14px] leading-4">Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).</p>
                         </div>
-                        <h3 className='flex whitespace-nowrap text-[18px] leading-6 font-semibold'>9.00€</h3>
+                        <h3 className='flex whitespace-nowrap text-[18px] leading-6 font-semibold'>9,00€</h3>
                     </label>
                 </div>
             </form>

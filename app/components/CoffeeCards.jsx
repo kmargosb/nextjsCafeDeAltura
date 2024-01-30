@@ -9,7 +9,7 @@ const CoffeeCards = ({ price, name, img, id, available, add }) => {
                 <Image src={img} alt='cafe' width={220} height={220} />
                 <div className='flex flex-col gap-3 justify-center items-center text-[14px] leading-[16px] '>
                     <p className='font-semibold'>{name}</p>
-                    <p className='font-normal'>{price.toFixed(2)} €</p>
+                    <p className='font-normal'>{price.toFixed(2).replace('.', ',')} €</p>
                 </div>
                 <ButtonVariants click={add} intent="verdeA" size="peque" roundness="normal">Añadir</ButtonVariants>
             </div>
@@ -21,7 +21,7 @@ const CoffeeCards = ({ price, name, img, id, available, add }) => {
                 <Image src={img} alt='cafe' width={220} height={220} />
                 <div className='flex flex-col gap-3 justify-center items-center text-[14px] leading-[16px] '>
                     <p className='font-semibold'>{name}</p>
-                    <p className='font-normal'>{price.toFixed(2)} €</p>
+                    <p className='font-normal'>{price.toFixed(2).replace('.', ',')} €</p>
                 </div>
                 <ButtonVariants intent="agotado" size="peque" roundness="normal">Agotado</ButtonVariants>
             </div>

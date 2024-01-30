@@ -10,8 +10,7 @@ const SectionForm = () => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const submit = handleSubmit((data) => { 
-        console.log(data) 
+    const submit = handleSubmit((data) => {  
         const mensajeToast = `Gracias ${data.name} por escribirnos, nos pondremos en contacto por ${data.email} o por tu numero telefonico`;
         toast(<div className='text-center'>{mensajeToast}</div>, {duration: 3000})
         reset();
@@ -62,8 +61,8 @@ const SectionForm = () => {
                             </div>
                         </div>
                         <p className='h-6'>
-                            ¿Buscas un trabajo?
-                            <Link href='' className='font-semibold leading-4 text-[14px] text-BlackP underline'> Ver nuestras ofertas.</Link>
+                            ¿Buscas un trabajo?&nbsp;
+                            <Link href='' className='font-semibold leading-4 text-[14px] text-BlackP underline'>Ver nuestras ofertas.</Link>
                         </p>
                     </div>
                 </div>

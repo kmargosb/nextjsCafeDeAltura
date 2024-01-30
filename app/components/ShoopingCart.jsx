@@ -61,7 +61,7 @@ const ShoppingCart = () => {
                   <p>{item.quantity}</p>
                   <p className="cursor-pointer p-3" onClick={() => handleAdd(item.id)}>+</p>
                   <h3 className="w-36">{item.name}</h3>
-                  <p>{item.price.toFixed(2) + ' €'}</p>
+                  <p>{item.price.toFixed(2).replace('.', ',') + ' €'}</p>
                   <FaTrashCan className="cursor-pointer w-6 h-6" onClick={() => handleRemoveFromCart(item.id)} />
                </div>
             ))}
@@ -72,7 +72,7 @@ const ShoppingCart = () => {
                </div>
                <div className="flex">
                   <h3 className="mr-2">Subtotal:</h3>
-                  <p>{subtotal} €</p>
+                  <p>{subtotal.toFixed(2).replace('.', ',')} €</p>
                </div>
             </div>
             <Link href='/bagshop' className="flex items-center justify-center bg-slate-300 py-2 px-3 w-40 rounded-lg">
