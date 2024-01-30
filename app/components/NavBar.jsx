@@ -42,7 +42,9 @@ const NavBar = () => {
                     </svg>
                     <h2>+34 919 49 05 18</h2>
                 </div>
-                <ButtonVariants click={() => console.log('hola')} intent="gris" size="normal" roundness="normal">Iniciar sesión</ButtonVariants>
+                <Link href="/login">
+                    <ButtonVariants intent="gris" size="normal" roundness="normal">Iniciar sesión</ButtonVariants>
+                </Link>
             </div>
             <button className='flex gap-2' onClick={handleButtonClick}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 22" fill="none">
