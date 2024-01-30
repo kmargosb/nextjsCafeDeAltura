@@ -1,6 +1,5 @@
 'use client'
 
-
 import { useForm } from 'react-hook-form';
 
 const PruebaForm = ({ onSubmit }) => {
@@ -11,6 +10,9 @@ const PruebaForm = ({ onSubmit }) => {
   const handleRadioChange = (value) => {
     setValue('radioOption', value);
 
+    const handleSubmit = (data) =>{
+      console.log(data)
+    }
     // Habilitar los primeros cuatro inputs solo si se selecciona "Option 1"
     if (value === 'option1') {
       setValue('textInput1', '');
