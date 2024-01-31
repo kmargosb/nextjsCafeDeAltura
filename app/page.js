@@ -9,7 +9,7 @@ import SectionCoffeeCards from './components/SectionCoffeeCards'
 
 const Home = () => {
   return (
-    <div className='pt-16'>
+    <div>
       <SectionHero />
       <SectionCards />
       <SectionCoffeeCards/>

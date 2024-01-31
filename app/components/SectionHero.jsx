@@ -10,7 +10,7 @@ const SectionHero = () => {
 
 
     return (
-        <div className='bg-OffWhite py-12 px-10 w-[full] flex justify-center'>
+        <div className='bg-OffWhite py-12 px-10 w-[full] flex justify-center pt-[104px]'>
             <div className='flex justify-center items-center gap-6 w-[1200px] h-[390px]'>
                 <div className='flex flex-col w-[588px] gap-4 justify-center'>
                     <h3 className='text-[18px] text-GreenAll font-semibold leading-6'>De la planta a tu taza</h3>
