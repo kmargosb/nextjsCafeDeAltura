@@ -31,8 +31,6 @@ const NuevaFormCheckout = ({ onSubmit }) => {
     setValue(name, value);
   };
 
-
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className='p-2 flex flex-col gap-6 w-[792px]'>
@@ -84,7 +82,7 @@ const NuevaFormCheckout = ({ onSubmit }) => {
             </div>
             <div className='flex w-full gap-6'>
               <div className='flex flex-col w-2/4 gap-[3px]'>
-                <label htmlFor="fecha">Fecha de caducidad</label>
+                <label htmlFor="dateCard">Fecha de caducidad</label>
                 <input
                   type="dateCard"
                   id='dateCard'
@@ -99,7 +97,7 @@ const NuevaFormCheckout = ({ onSubmit }) => {
               <div className='flex flex-col w-2/4 gap-[3px]'>
                 <label htmlFor="cvc" >CVC</label>
                 <input type="text"
-                  id='CVC'
+                  id='cvc'
                   name='CVC'
                   placeholder='123'
                   className='flex w-full h-[36px] py-[10px] px-2 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
@@ -181,11 +179,12 @@ const NuevaFormCheckout = ({ onSubmit }) => {
                 id='email'
                 name='email'
                 className='flex w-full h-[36px] py-[10px] px-2 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
+                autoComplete='off'
               />
             </div>
             <div className="relative flex flex-col w-full gap-[3px]">
               <label htmlFor="pais">Pais</label>
-              <select name='pais' className="w-full appearance-none h-[36px] py-[10px] px-2 p-2 pr-10 text-Grey rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp">
+              <select name='pais' id='pais' className="w-full appearance-none h-[36px] py-[10px] px-2 p-2 pr-10 text-Grey rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp">
                 <option value="" >Seleccionar</option>
                 <option value="espana">España</option>
                 <option value="francia">Francia</option>
@@ -239,20 +238,20 @@ const NuevaFormCheckout = ({ onSubmit }) => {
                 />
               </div>
               <div className='flex flex-col w-full gap-[3px]'>
-                <label htmlFor="poblacion">Población</label>
+                <label htmlFor="piso">Piso</label>
                 <input
                   type="text"
-                  id='poblacion'
-                  name='poblacion'
+                  id='piso'
+                  name='piso'
                   className='flex w-full h-[36px] py-[10px] px-2 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                 />
               </div>
               <div className='flex flex-col w-full gap-[3px]'>
-                <label htmlFor="poblacion">Población</label>
+                <label htmlFor="puerta">Puerta</label>
                 <input
                   type="text"
-                  id='poblacion'
-                  name='poblacion'
+                  id='puerta'
+                  name='puerta'
                   className='flex w-full h-[36px] py-[10px] px-2 rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                 />
               </div>

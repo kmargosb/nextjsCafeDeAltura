@@ -1,7 +1,5 @@
 import React from 'react'
 import TotalCheckout from './TotalCheckout'
-import FormCheckout from './FormCheckout'
-import PruebaForm from './PruebaForm'
 import NuevaFormCheckout from './NuevaFormCheckout'
 
 const page = () => {

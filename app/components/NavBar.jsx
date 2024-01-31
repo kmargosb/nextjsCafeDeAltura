@@ -6,6 +6,7 @@ import { HiOutlinePhone } from "react-icons/hi";
 import ButtonVariants from './ButtonVariants'
 import ShoppingCart from './ShoopingCart'
 import { DataCoffeeContext } from '../context/DataCoffee'
+import { usePathname } from 'next/navigation';
 
 const NavBar = () => {
 
@@ -13,6 +14,10 @@ const NavBar = () => {
     const [isQuantityOpen, setIsQuantityOpen] = useState(false)
 
     useEffect(() => totalQuantity !== 0 ? setIsQuantityOpen(true): setIsQuantityOpen(false), [totalQuantity]);
+
+    const currentPath = usePathname()
+
+    const shouldShowModal = currentPath !== '/checkout' && currentPath !== '/success';
 
     return (
         <div className='z-50 fixed flex py-3 px-10 justify-between items-center text-white bg-DarkGrey w-full'>
@@ -49,7 +54,7 @@ const NavBar = () => {
                     {totalQuantity}
                 </div>}
             </button>
-            {isModalOpen && <ShoppingCart />}
+            {shouldShowModal && isModalOpen && <ShoppingCart />}
         </div>
     )
 }
