@@ -77,7 +77,7 @@ const ShoppingCart = () => {
                </div>
             </div>
             <Link href='/bagshop' >
-               <ButtonVariants intent="negro" size="medium" roundness='normal'>Ir a la Cesta</ButtonVariants>
+               <ButtonVariants click={handleButtonClick} intent="negro" size="medium" roundness='normal'>Ir a la Cesta</ButtonVariants>
             </Link>
             <h3 className="cursor-pointer absolute top-1 right-5 text-2xl" onClick={handleButtonClick}>X</h3>
          </div>
