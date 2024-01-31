@@ -89,6 +89,7 @@ const SectionForm = () => {
                   }
                 })}
                 type="text" name="name" id="name"
+                autoComplete="off"
                 className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
               />
               {errors.name && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2568px]'>{errors.name.message}</span>}
@@ -107,6 +108,7 @@ const SectionForm = () => {
                   }
                 })}
                 type="email" name="email" id="email"
+                autoComplete="off"
                 className='flex w-full h-[34px] py-[9px] px-[13px] rounded-md border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
               />
               {errors.email && <span className='text-red-700 text-[12px] leading-[8px] absolute top-[2648px]'>{errors.email.message}</span>}
@@ -135,6 +137,7 @@ const SectionForm = () => {
                     }
                   })}
                   type="text" name="phone" id="phone"
+                  autoComplete="off"
                   placeholder="123456789"
                   className='min-w-[470px] h-[38px] py-[9px] pr-[13px] pl-[60px] rounded-md bg-transparent relative right-11 border border-gray-300 hover:border-hover-inp focus:border-2 focus:outline-none focus:border-focus-inp'
                 />

@@ -2,6 +2,7 @@
 
 import React, { useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
+import { HiOutlinePhone } from "react-icons/hi";
 import ButtonVariants from './ButtonVariants'
 import ShoppingCart from './ShoopingCart'
 import { DataCoffeeContext } from '../context/DataCoffee'
@@ -11,12 +12,7 @@ const NavBar = () => {
     const { handleButtonClick, isModalOpen, totalQuantity } = useContext(DataCoffeeContext);
     const [isQuantityOpen, setIsQuantityOpen] = useState(false)
 
-    useEffect(() => {
-        if (totalQuantity !== 0) {
-            setIsQuantityOpen(true)
-        } else { setIsQuantityOpen(false) }
-    }, [totalQuantity]);
-
+    useEffect(() => totalQuantity !== 0 ? setIsQuantityOpen(true): setIsQuantityOpen(false), [totalQuantity]);
 
     return (
         <div className='z-50 fixed flex py-3 px-10 justify-between items-center text-white bg-DarkGrey w-full'>
@@ -30,16 +26,14 @@ const NavBar = () => {
             </Link>
             <div className=' flex gap-4 text-[14px] leading-[16px] font-semibold'>
                 <Link href="/shop" className='p-2 rounded-[10px] hover:bg-hover-nav' >Tienda</Link>
-                <Link href="/suscription" className='p-2 rounded-[10px] hover:bg-hover-nav'>Suscripción</Link>
+                <Link href="/register" className='p-2 rounded-[10px] hover:bg-hover-nav'>Suscripción</Link>
                 <Link href="/para_empresas" className='p-2 rounded-[10px] hover:bg-hover-nav'>Para empresas</Link>
                 <Link href="/about_us" className='p-2 rounded-[10px] hover:bg-hover-nav'>Sobre nosotros</Link>
                 <Link href="/contact" className='p-2 rounded-[10px] hover:bg-hover-nav'>Contacto</Link>
             </div>
             <div className='flex justify-center items-center gap-6'>
                 <div className='flex items-center gap-2 text-[14px] leading-[16px] font-semibold'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24" fill="none">
-                        <path d="M3.95312 5C3.95312 3.89543 4.84856 3 5.95312 3H9.23237C9.6628 3 10.0449 3.27543 10.181 3.68377L11.6789 8.17721C11.8362 8.64932 11.6225 9.16531 11.1774 9.38787L8.92013 10.5165C10.0224 12.9612 11.9919 14.9308 14.4366 16.033L15.5653 13.7757C15.7878 13.3306 16.3038 13.1169 16.7759 13.2743L21.2694 14.7721C21.6777 14.9082 21.9531 15.2903 21.9531 15.7208V19C21.9531 20.1046 21.0577 21 19.9531 21H18.9531C10.6689 21 3.95312 14.2843 3.95312 6V5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                <HiOutlinePhone className='size-6'/>
                     <h2>+34 919 49 05 18</h2>
                 </div>
                 <Link href="/login">

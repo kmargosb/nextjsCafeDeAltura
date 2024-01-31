@@ -3,7 +3,7 @@ const cartReducer = (state, dispatch) => {
     switch (dispatch.action) {
 
         case "ADD_ITEM":
-            const cafe = state.find((producto) => producto.id === dispatch.product._id);
+            const cafe = state.find((item) => item.id === dispatch.product._id);
             let updatedState;
             if (!cafe) {
                 updatedState = [
@@ -17,10 +17,10 @@ const cartReducer = (state, dispatch) => {
                     },
                 ];
             } else {
-                updatedState = state.map((producto) =>
-                    producto.id === dispatch.product._id
-                        ? { ...producto, quantity: producto.quantity + 1 }
-                        : producto
+                updatedState = state.map((item) =>
+                    item.id === dispatch.product._id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
                 );
             }
             return updatedState;
@@ -30,24 +30,22 @@ const cartReducer = (state, dispatch) => {
             return newState;
 
         case "ADDITION":
-            return state.map((producto) =>
-                producto.id === dispatch.product._id
-                    ? { ...producto, quantity: producto.quantity + 1 }
-                    : producto
+            return state.map((item) =>
+                item.id === dispatch.product._id
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
             );
 
             case "SUBTRACTION":
-                const updateCart = state.map((producto) =>
-                    producto.id === dispatch.product._id
-                        ? producto.quantity > 1
-                            ? { ...producto, quantity: producto.quantity - 1 }
+                const updateCart = state.map((item) =>
+                    item.id === dispatch.product._id
+                        ? item.quantity > 1
+                            ? { ...item, quantity: item.quantity - 1 }
                             : null
-                        : producto
+                        : item
                 ).filter(Boolean);
             
-                return updateCart.length > 0
-                    ? updateCart
-                    : state.filter((item) => item.id !== dispatch.product._id);
+                return updateCart
 
         case "EMPTY_CART":
             return state = []

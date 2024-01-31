@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import Button from './Button'
+import { HiOutlinePhone } from "react-icons/hi";
+import ButtonVariants from './ButtonVariants'
 
 const SectionFooter = () => {
     return (
@@ -17,33 +18,23 @@ const SectionFooter = () => {
                 <div className='flex justify-between items-start w-[1132px] h-[152px]'>
                     <div className='flex flex-col items-start gap-4 w-[255px]'>
                         <h3 className='text-center font-semibold text-[18px] leading-6'>Te ayudamos en</h3>
-                        <Button
-                            text={
-                                <div className='flex items-center gap-2 text-[14px] leading-[16px] font-semibold'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 25 24" fill="none">
-                                        <path d="M3.95312 5C3.95312 3.89543 4.84856 3 5.95312 3H9.23237C9.6628 3 10.0449 3.27543 10.181 3.68377L11.6789 8.17721C11.8362 8.64932 11.6225 9.16531 11.1774 9.38787L8.92013 10.5165C10.0224 12.9612 11.9919 14.9308 14.4366 16.033L15.5653 13.7757C15.7878 13.3306 16.3038 13.1169 16.7759 13.2743L21.2694 14.7721C21.6777 14.9082 21.9531 15.2903 21.9531 15.7208V19C21.9531 20.1046 21.0577 21 19.9531 21H18.9531C10.6689 21 3.95312 14.2843 3.95312 6V5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    <h2>+34 919 49 05 18</h2>
-                                </div>
-                            }
-                            styles='py-3 px-6 rounded bg-Grey'
-                            linkTo="/"
-                        />
-                        <Button
-                            text={
-                                <div className='flex gap-2 text-[14px] leading-[16px] font-semibold items-center'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
-                                            stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    <p>hola@cafedealtura.com</p>
-                                </div>
-                            }
-                            styles='border-none rounded bg-Grey py-3 px-6 flex justify-center items-center'
-                            linkTo="/"
-                        />
+                        <ButtonVariants intent='gris' size='normal' roundness='normal'>
+                            <div className='flex justify-center items-center gap-2'><HiOutlinePhone className='size-6' />+34 919 49 05 18</div>
+                        </ButtonVariants>
+
+                        <ButtonVariants intent='gris' size='normal' roundness='normal'>
+                            <div className='flex gap-2 items-center'>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                                        stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                                hola@cafedealtura.com
+                            </div>
+                        </ButtonVariants>
+
+
                     </div>
                     <div className='flex flex-col gap-4 font-semibold leading-4 text-[14px] relative left-[55px]'>
                         <Link href="/shop">Tienda</Link>

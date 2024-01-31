@@ -5,6 +5,7 @@ import { FaCartShopping, FaTrashCan, FaTrash } from "react-icons/fa6";
 import { DataCoffeeContext } from "../context/DataCoffee";
 import Link from "next/link";
 import Image from "next/image";
+import ButtonVariants from "./ButtonVariants";
 
 const ShoppingCart = () => {
    const { cart, dispatch, handleButtonClick, subtotal } = useContext(DataCoffeeContext);
@@ -75,8 +76,8 @@ const ShoppingCart = () => {
                   <p>{subtotal.toFixed(2).replace('.', ',')} €</p>
                </div>
             </div>
-            <Link href='/bagshop' className="flex items-center justify-center bg-slate-300 py-2 px-3 w-40 rounded-lg">
-               Ir a la Cesta
+            <Link href='/bagshop' >
+               <ButtonVariants intent="negro" size="medium" roundness='normal'>Ir a la Cesta</ButtonVariants>
             </Link>
             <h3 className="cursor-pointer absolute top-1 right-5 text-2xl" onClick={handleButtonClick}>X</h3>
          </div>

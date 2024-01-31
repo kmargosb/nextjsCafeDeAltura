@@ -4,7 +4,6 @@ import SectionFooter from '../components/SectionFooter'
 import ArrayCoffee from '../components/ArrayCoffee'
 
 const Shop = () => {
-
   return (
 
     <div className='pt-16'>

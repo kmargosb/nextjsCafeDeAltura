@@ -34,3 +34,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+El que pueda leer esto quiero decir que para mi ha sido un placer poder escribir este proyecto donde he aprendido mucho sobre react, next, tailwind y firebase, mi logica de programacion ha aumentado hasta un 40%, se que aun me falta mucho por aprender pero estoy tan emocionado y motivado que el resto con la practica será pan comido, un saludo a mi ama, a junior jackson edwin el ni;o al goldo a la se;ora zaida a luisi juansitotesto care pizza y a to el mundo en general alla en 23 y gueno gracias por la opoltunida de nuevo y mas nada vale, mas nada.
